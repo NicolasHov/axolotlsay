@@ -1,0 +1,5 @@
+{
+    "build": {
+        "path_prefix": "https://github.com/NicolasHov/axolotlsay"
+    }
+}
