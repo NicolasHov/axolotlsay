@@ -4,13 +4,12 @@ enum UserEmotion {
     Sad,
 }
 
-
 impl ToString for UserEmotion {
     fn to_string(&self) -> String {
         match self {
-            UserEmotion::Happy => String::from("User is logged in."),
-            UserEmotion::Sad => String::from("User is logged out."),
-            _ => String::from("User is banned"),
+            UserEmotion::Happy => String::from("I'm happy"),
+            UserEmotion::Sad => String::from("The world is ending, yay!"),
+            _ => String::from("I'm dead"),
         }
     }
 }
@@ -20,19 +19,16 @@ impl ToString for UserEmotion {
 struct Args {
     /// Name of the person to greet
     message: String,
-
-    /// State of mind
-     emotion: UserEmotion;
-    
 }
 
 fn main() {
     let args = Args::parse();
     //TODO: match on emotion
+    let emotion = UserEmotion::Sad;
+    let emotion_str = emotion.to_string();
     // dbg!(args); // display with extended info
-    println!("{}", UserEmotion::Happy);
     println!("                       ");
-    println!("       | {:?} !|", args.message);
+    println!("       | I'm {:?} and {} !|", args.message, emotion_str);
     println!("        / ");
     println!("       / ");
     println!("      / ");
